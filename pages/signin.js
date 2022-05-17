@@ -49,7 +49,7 @@ export default function SignIn() {
 
                 <button type="submit">Sign In</button>
             </form>
-            <Link href="/signup"><a>Don't have an account? Create one</a></Link>
+            <Link href="/signup"><a>Don&apos;t have an account? Create one</a></Link>
         </div>
     )
 }
