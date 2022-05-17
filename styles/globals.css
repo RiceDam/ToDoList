@@ -2,15 +2,124 @@ html,
 body {
   padding: 0;
   margin: 0;
+  background-color: #212121;
+  color: white;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.todo-container {
+  text-align: center;
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid white;
+  padding: 20px 10px;
+  border-radius: 5px;
+  height: 100vh;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.inputForm label {
+  font-size: 32px;
+}
+
+.inputForm input {
+  font-size: 24px;
+  padding: 5px;
+  border: none;
+  border: solid 1px black;
+  border-radius: 5px;
+}
+
+.inputForm button {
+  font-size: 24px;
+  width: fit-content;
+  align-self: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10vw;
+}
+
+li {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#add-button {
+  font-size: 24px;
+  position: fixed;
+  bottom: 10vh;
+  right: 35vw;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  text-align: left;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  margin-bottom: 10px;
+}
+
+.content:hover {
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.content:hover .hidden {
+  display: inline-block;
+}
+
+.hidden {
+  font-size: 16px;
+  display: none;
+}
+
+.dropdown {
+  padding: 0 10px;
 }
