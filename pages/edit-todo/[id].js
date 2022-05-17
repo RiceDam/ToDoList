@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { supabase } from '../../utils/supabaseClient';
 
+// Edits a todo item based on the id
 export default function EditTodo() {
     const router = useRouter();
     const { id } = router.query;
     const [name, setName] = useState('');
 
+    // On page load fetches the todo item based on id
     useEffect(() => {
         const fetchTodo = async (todo_id)  => {
             let { data: todos, error } = await supabase
@@ -18,6 +20,8 @@ export default function EditTodo() {
         fetchTodo(id); 
     }, [])
 
+    // Function that attempts to update the name of a todo item
+    // On success reroutes to main page
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { data, error } = await supabase

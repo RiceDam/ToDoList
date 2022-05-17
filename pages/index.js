@@ -11,6 +11,9 @@ export default function Home() {
   const [todoList, setTodos] = useState([]);
   const [cross, setCross] = useState(false);
 
+  // On page load, checks if the user is logged in
+  // If the user is logged in, proceed to pull all todo items for that user
+  // Else, reroute the user to the login page
   useEffect(() => {
     const fetchTodos = async (userId) => {
       let { data: todos, error } = await supabase
@@ -31,6 +34,7 @@ export default function Home() {
     getUser();
   }, []);
 
+  // Function to show an option menu on list item click
   const showDiv = (e) => {
     const style = e.target.parentElement.children[1].style;
     if (style.display === "none") {
@@ -42,6 +46,7 @@ export default function Home() {
     }
   }
 
+  // Function to sign out a user
   const logout = async () => {
     const { error } = await supabase.auth.signOut();
     if (error) {
@@ -51,6 +56,7 @@ export default function Home() {
     }
   }
 
+  // Button to toggle the crossing out of tasks
   const toggleCross = () => {
     if (cross) {
       setCross(false);
@@ -59,6 +65,7 @@ export default function Home() {
     }
   }
 
+  // Function to cross out or uncross an todo item
   const crossOut = async (e, todo_id) => {
     if (e.target.style.textDecoration === 'line-through') {
       e.target.style.textDecoration = 'none';

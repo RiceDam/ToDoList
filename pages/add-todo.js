@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { supabase } from '../utils/supabaseClient';
 
+// Page to add a todo item
 export default function AddTodo() {
     const router = useRouter();
     const [name_text, setName] = useState('');
 
+    // Attempts to add a todo item to the database
+    // On success reroutes to the main page
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (name_text.length === 0) {

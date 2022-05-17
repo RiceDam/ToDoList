@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { supabase } from '../../utils/supabaseClient';
 
+// Deletes a todo item based on id
 export default function DeleteTodo() {
     const router = useRouter();
     const { id } = router.query;
     const [name, setName] = useState('');
 
+    // On page load fetch todo item based on id
     useEffect(() => {
         const fetchTodo = async (todo_id)  => {
             let { data: todos, error } = await supabase
@@ -18,6 +20,8 @@ export default function DeleteTodo() {
         fetchTodo(id); 
     }, [])
 
+    // Function that attempts to delete a todo item
+    // On success reroutes to main page
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { data, error } = await supabase

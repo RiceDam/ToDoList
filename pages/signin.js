@@ -8,9 +8,10 @@ export default function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // Function that attempts to login a user
+    // If successful, reroutes to the main page
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const { error } = await supabase.auth.signIn({
             email,
             password,

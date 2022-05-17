@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Logging into the app
+
+You would have to sign up using an email.
+Afterwards, you would have to check your email for a confirmation.
+Then, you can use your email to login to the app
+
 ## Getting Started
 
 First, run the development server:
